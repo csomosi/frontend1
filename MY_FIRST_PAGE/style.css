@@ -1,0 +1,80 @@
+body{
+    background-color: #488ccd;
+    width: 800px;       /*az egész body szélességét beállítja */
+    padding: 50px;
+    margin: 0 auto;
+    /* margin és padding esetén két értéket tudok megadni, az első az alul-felül, a második a jobbra-balra értendő
+    az 'auto' azt jelenti, hogy automatikusan rábízzuk a böngészőre, amennyit lehet, annyit fog alkalmazni. 
+    csak akkor fog középre rendeződni az auto használatával, ha van szélesség amit megadtunk.*/
+    font-family: 'Montserrat', sans-serif;; 
+    /* ezek a CSS property-k öröklődnek lefelé a bodyn belüli elemekre */
+    /* a második betűtípus akkor használódik, ha a usernek nincs ez első */
+    color:white
+}
+
+.page-title{
+    /* color: white;       /* ez nem szükséges most, mert a body beállítás öröklődött ide is. */
+    font-size: 50px;
+    font-weight: 200;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* ha így adom meg akkor óramutató járással egyezően adom meg:
+    /* margin: 40px 0 40px 0;      */
+    
+}
+
+.main-menu{
+    background-color: #284c80;
+    padding: 0%;
+    list-style: none;
+}
+
+.main-menu-item {
+    /* a menüpontokat egymás mellé akarom rakni ezért változtatom, hogy inline legyen mert alapból block */
+    display: inline;
+}
+
+/* elem kiválasztása történhet úgy, hogy pl. összes 'a tag' vagy pl. alább csak a main menü-n belüli 'a-tagek' */
+.main-menu-item a {
+    color: rgb(188, 248, 255);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 20px 0;
+    /* a menü elemeken belüli 'a-tag'-ek esetén a padding és margó állítása csak akkor lesz effektív, ha alkalmazzuk a következő sort  */
+    display: inline-block;
+}
+
+/* menüpont fölé visszük az egeret akkor színt állítunk aláhúzzuk és kurzor változik */
+.main-menu-item a:hover{
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.created-date {
+    margin-bottom: 40px;
+    font-style: italic;
+    color: #284c80;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.content-lead, .content-body {
+    line-height: 1.7;
+}
+
+.content-lead {
+    font-size: 25px;
+    margin-bottom: 40px;
+  }
+  
+  .content-body {
+    font-size: 18px;
+  }
+
+  .content-image-container{
+    /* az inline lemeket a text-alaign igazítja középre */
+    text-align: center;
+  }
+
+  
