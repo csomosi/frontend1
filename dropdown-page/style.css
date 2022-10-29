@@ -1,0 +1,87 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body {
+  background: rgb(32 38 53);
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.main-menu-container {
+  padding-top: 50px;
+}
+
+.main-menu {
+  padding: 0;
+  border-bottom: 3px solid #5affd9;
+  text-align: center;
+}
+
+.main-menu-item {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.main-menu-item a,
+.main-menu-item span {
+  text-decoration: none;
+  color: #54beff;
+  display: block;
+  padding: 20px 0;
+  width: 120px;
+}
+
+.sub-menu {
+  list-style: none;
+  padding: 0;
+  background-color: rgb(34, 116, 175);
+  width: 200px;
+  display: none;
+  position: absolute;
+  top: 59;
+  left: 0;
+}
+.sub-menu-item:hover > a {
+  background-color: rgb(66, 130, 177);
+}
+
+.main-menu-item:hover > .sub-menu {
+  display: block;
+}
+.main-content {
+  color: white;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+header {
+  width: 400px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 22px;
+  margin: 0 0 30px 0;
+}
+
+main {
+  font-size: 16px;
+  margin: 0 0 30px 0;
+}
+
+footer {
+  text-align: center;
+  color: white;
+}
+
+.company-image {
+  float: right;
+}
