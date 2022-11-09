@@ -37,20 +37,22 @@ body {
 .sub-menu {
   list-style: none;
   padding: 0;
-  background-color: rgb(34, 116, 175);
+  background-color: rgb(34 116 175);
   width: 200px;
   display: none;
   position: absolute;
   top: 59;
   left: 0;
 }
+
 .sub-menu-item:hover > a {
-  background-color: rgb(66, 130, 177);
+  background-color: rgb(66 130 177);
 }
 
 .main-menu-item:hover > .sub-menu {
   display: block;
 }
+
 .main-content {
   color: white;
   width: 800px;
@@ -69,12 +71,12 @@ h1 {
 
 header p {
   font-size: 22px;
-  margin: 0 0 30px 0;
+  margin: 0 0 30px;
 }
 
 main {
   font-size: 16px;
-  margin: 0 0 30px 0;
+  margin: 0 0 30px;
 }
 
 footer {

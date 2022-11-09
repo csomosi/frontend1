@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+      padding: 0;
+      margin: 0;
+      font-size: 40px;
+
+      #C12 {
+        color: red;
+      }
+      .last-content {
+        background-color: rgb(179, 116, 40);
+      }
+      .menu {
+        color: blue;
+        text-align: center;
+        font-style: italic;
+        border: 10px solid black;
+      }
+      .list-item {
+        color: tomato;
+        background-color: azure;
+        border-left: 10px double greenyellow;
+      }
+      .highlight {
+        background-color: #ee3;
+      }
+
+      .box-one {
+        background-color: red;
+        border: 20px solid purple;
+        padding: 10px;
+        margin: 10px;
+        height: 1000 px;
+        width: 100px;
+      }
+
+      .box-two {
+        background-color: blue;
+        border: 0 solid green;
+      }
+    </style>
+
+    <title>Document</title>
+  </head>
+  <!-- the box model: -->
+
+  <div class="box-one">BOX 1</div>
+  <div class="box-two">BOX 2</div>
+
+  <!-- inline style, style tag -->
+
+  <h1>CSS</h1>
+  <p>1. inline style:</p>
+  <div style="color: blue">text in this box is blue, with inline style</div>
+
+  <p>Multiline inline style (not very common) :</p>
+
+  <div
+    style="
+      background-color: #0061ff;
+      height: 30px;
+      text-align: center;
+      color: white;
+    "
+  >
+    This box is inline styled. Inline style has the highest priority.
+  </div>
+
+  <p>The style tag has less priority, inline style is stronger</p>
+
+  <style>
+    /* class selector is represented with a . classes are for styling, or identifying multiple elements */
+    .red-box {
+      background-color: red;
+      height: 40px;
+      color: white;
+      text-align: start;
+    }
+
+    /* ID selector, may be used for styling, or identifying one element only */
+    #round-box {
+      /* 30px padding around the box padding is extra space inside*/
+      padding: 30px;
+      /* 20px margin around the box: margin is extra space outside */
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background-color: black;
+      color: white;
+      border-radius: 120px;
+      height: 40px;
+    }
+  </style>
+
+  <div class="red-box">
+    Red Box, styled with style tag, and we used class selectors
+  </div>
+  <div style="color: blue" id="round-box">
+    Round Box also styled with style tag, but we used ID selectors
+  </div>
+
+  <!-- html alapok -->
+
+  <body>
+    <header>
+      ez a header rész
+      <!--   the place for the header content -->
+      <!--   nav for navigation -->
+      <nav>
+        <!--     usually nav contains one or more ul's (unordered list) -->
+        <ul>
+          <!--       li = list item -->
+          <li>Menu 1</li>
+          <li>Menu 2</li>
+          <li>Menu 3</li>
+          <li>Menu 4</li>
+          <li>Menu 5</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Clickable details/summary elements    -->
+
+      <details open>
+        <summary>This is the details</summary>
+        this is inside1<br /><br />
+      </details>
+
+      <details close>
+        <summary>This is the details</summary>
+        this is opened by default<br /><br />
+      </details>
+
+      <article>
+        <!--   sectioning is important for seo. inside the section the first h tag is the section's title -->
+        <section>
+          <!--   headings are like in ms word, the outline is generated like a table of contents -->
+          <h1>Ez az első section címe</h1>
+          <!-- paragraph: -->
+          <p>first section text</p>
+          <!--     use text level semantics https://www.w3.org/TR/2011/WD-html5-20110525/text-level-semantics.html -->
+
+          <!--figure is part of the article as grapics -->
+          <figure>
+            <img
+              src="https://picsum.photos/200/300"
+              alt="random image"
+              width="304"
+              height="228"
+            />
+            <figcaption>image caption</figcaption>
+          </figure>
+
+          <!-- sections should group similar contents together https://stackoverflow.com/questions/7041283/nesting-html5-section-tags -->
+        </section>
+        <!-- end of 1. section -->
+        <!-- use sectioning to create great outlines for SEO and screen readers http://w3c.github.io/html/dom.html#sectioning-content  -->
+        <section>
+          <h2>Subheading</h2>
+          <p>this is another section</p>
+        </section>
+      </article>
+    </main>
+    <!-- The sidebar is not part of the main content -->
+    <div class="last-content">
+      <h2>sidebar title</h2>
+      <p>sidebar content 1</p>
+      <p>sidebar content 2</p>
+      <p>sidebar content 3</p>
+    </div>
+
+    <!-- install outliner extension to create great outlines: https://chrome.google.com/webstore/detail/html5-outliner/afoibpobokebhgfnknfndkgemglggomo?hl=en -->
+    <footer>&copy; copyright 2018</footer>
+
+    <br />
+
+    <h2>Inline, Block level elements</h2>
+    In general, HTML elements can be divided into two categories : block level
+    and inline elements.
+    <ol>
+      <li>HTML block level elements can appear in the body of an HTML page.</li>
+      <li>It can contain another block level as well as inline elements.</li>
+      <li>By default, block-level elements begin on new lines.</li>
+      <li>
+        block level elements create larger structures (than inline elements).
+      </li>
+    </ol>
+    <!--   "a" tag is inline level  -->
+    <!--  _blank means open in a new tab -->
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements"
+      target="_blank"
+      >Read more inline level elements</a
+    >
+
+    <!--   Empty div creates a new line because div is block level element -->
+    <div></div>
+
+    <a
+      target="_blank"
+      href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements"
+      >Read more block level elements</a
+    >
+    <!--     <div style="background-color: blue; width: 80px">
+      <h1 style="color: white">h1 szöveg</h1>
+      <h2>h2 szöveg</h2>
+      <h3>h3 szöveg</h3>
+
+      <div>ez mi?</div>
+      <span style="color: rgb(255, 0, 68)">bukta</span>
+      <span style="color: rgb(0, 255, 68)">cica</span>
+      <div>ez egy div</div>
+      <span style="color: rgb(228, 221, 12)">kugli</span>
+    </div>
+    <div id="C12">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit sed
+      animi dolor facere atque nam excepturi, voluptate eaque saepe sequi?
+    </div>
+    <p></p>
+    <p></p>
+    <div class="last-content">ez is egy div</div>
+    <p></p>
+    <p></p>
+    <div>
+      The following span is an <span class="highlight">inline element</span>;
+      its background has been colored to display both the beginning and end of
+      the inline element's influence.
+    </div>
+    <p></p>
+    <div>
+      The following paragraph is a
+      <p class="highlight">block-level element;</p>
+      its background has been colored to display both the beginning and end of
+      the block-level element's influence.
+    </div>
+
+    <p></p>
+    <ul class="menu">
+      <li class="list-item">menu1</li>
+      <li class="list-item">menu2</li>
+      <li class="list-item">menu3</li>
+    </ul> -->
+  </body>
+</html>

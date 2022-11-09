@@ -1,0 +1,59 @@
+body {
+  width: 800px;
+  padding: 50px;
+  background-color: #448ccd;
+  color: white;
+
+  /* középre igazítás a margin 0 auto segítségével */
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 50px;
+  font-weight: 200;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.menu {
+  background-color: darkblue;
+  padding: 0%;
+}
+
+.menu-item {
+  display: inline-block;
+  color: yellowgreen;
+  margin-left: 20px;
+  padding: 20px 0;
+  list-style: none;
+}
+
+.menu-item:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+h1 {
+  border: 0 40;
+  margin: 0;
+}
+
+.content-lead,
+.content-body {
+  line-height: 1.7;
+}
+
+.author {
+  color: darkblue;
+  font-size: 15px;
+  font-style: italic;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-top: 0;
+}
+
+.content-image-container {
+  /* az inline lemeket a text-alaign igazítja középre */
+  text-align: center;
+}
