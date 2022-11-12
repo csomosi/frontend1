@@ -1,0 +1,249 @@
+/* GALÉRIA library betöltést meg kell nézni és betenni, lemaradtam. */
+
+body {
+  font-family: "Playfair Display", serif;
+  background-color: rgb(242 237 228);
+  margin: 0;
+}
+
+header,
+main {
+  /* Viewport width mértékegység (van Viewport hight is): */
+  width: 80vw;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+}
+
+main {
+  /* rem: mértékegység, a betűtípussal van összefüggsében - "root element" A legfelső szinten lévő elem font size (pl. a Body fiont size mint most) lesz 1 rem - vagy másképp nézve 1 rem az 16 px */
+  margin-top: 1rem;
+}
+
+.logo {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.logo > h1 {
+  font-size: 2.25rem;
+  margin: 0;
+  padding: 0;
+  border-bottom: 4px solid black;
+}
+
+.logo > h2 {
+  font-size: 1rem;
+  padding: 0;
+  margin: 1rem 0 0;
+  font-style: italic;
+  line-height: 0;
+  color: rgb(90 86 79 / 100%);
+  letter-spacing: 0.3rem;
+}
+
+.menu-checkbox,
+.toggle-label {
+  display: none;
+}
+
+.menu-container {
+  /* töltse ki a rendelkezésre álló maximális helyet: */
+  flex-grow: 1;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.menu-item {
+  /* mivel egymásba van rakva ezért  */
+  flex-grow: 1;
+}
+
+.menu-item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+/* a menu-item közül a valahanyadik leszármazottja megjelölése az nth-child ("n-edik gyereke") Ez egy pseudo-class, olyan mint a hoover */
+.menu-item:nth-child(1) {
+  border-bottom: 4px solid red;
+}
+
+.menu-item:nth-child(2) {
+  border-bottom: 4px solid lightblue;
+}
+
+.menu-item:nth-child(3) {
+  border-bottom: 4px solid plum;
+}
+
+.menu-item:nth-child(4) {
+  border-bottom: 4px solid green;
+}
+
+.menu-item:nth-child(5) {
+  border-bottom: 4px solid yellow;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: black;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item:hover {
+  border-bottom: 4px solid transparent;
+  background-color: rgba(189, 198, 233, 0.56);
+}
+
+.main-article {
+  position: relative;
+}
+
+.main-article-image-container {
+  height: 40vw;
+  overflow: hidden;
+}
+
+.main-article-image {
+  width: 100%;
+}
+
+.main-article-text {
+  font-family: "Merriweather", serif;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.767);
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.main-article-text > h1 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 0;
+}
+
+.main-article-text > h2 {
+  font-size: 1rem;
+  color: white;
+  line-height: 1.6rem;
+}
+
+.tag {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.tag i {
+  padding: 5px;
+}
+
+.tag-politics {
+  background-color: red;
+}
+
+.continue-to-article {
+  background-color: blue;
+  color: white;
+  font-style: italic;
+  font-size: 1rem;
+  padding: 7px;
+  float: right;
+  text-decoration: none;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  margin: 0.5rem;
+}
+
+.gallery-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Responzivitás miatt megadjuk, h kis képernyőn mi változzon. Ez a media query. A media query -nek nincs hatása a specificity-re. Emiatt a CSS kód végére írjuk, mert csak a sorrend számít
+
+  max-width 960px alatt
+  min-width 960px fölött
+  900px és 600 px között: @media(max-width: 900ps) and (min-width:600px) {...} */
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media (max-width: 960px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-article-text {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    margin-top: 2rem;
+  }
+
+  .logo {
+    width: 80%;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu-container {
+    display: none;
+  }
+
+  .toggle-label {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-bottom: -65px;
+  }
+
+  .menu-item a {
+    height: 3rem;
+  }
+
+  .main-article-text > h1 {
+    font-size: 1.6rem;
+  }
+
+  .menu-item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .menu-checkbox:checked ~ .menu-container {
+    display: block;
+  }
+}

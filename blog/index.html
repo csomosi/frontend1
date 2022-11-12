@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Blog entries about journeys from around the world"
+    />
+    <meta name="author" content="John Doe" />
+    <meta name="keywords" content="blog journeys things" />
+    <meta name="robots" content="index" />
+    <link rel="canonical" href="https://example.com/blog" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <title>My blog</title>
+  </head>
+  <body>
+    <div class="page-header">
+      <div class="dash"></div>
+      <h1 class="page-title">Articles</h1>
+      <div class="dash"></div>
+    </div>
+
+    <article class="main">
+      <h1 class="main-title">
+        Few words about lorem ipsum and the history behind it
+      </h1>
+      <div class="author">
+        <img class="profile" src="./img/profile.jpg" alt="" />
+        <div class="author-name">by Susanne Smith</div>
+        <div class="date">
+          <i class="far fa-calendar-alt"></i>
+          <time datetime="2008-02-14 20:00">Aug 31.</time>
+        </div>
+      </div>
+      <h2 class="subheading">What is Lorem Ipsum?</h2>
+      <p>
+        Sit voluptate impedit quam non voluptates dicta Aliquam porro labore
+        delectus reprehenderit eligendi! Ipsa asperiores rerum eligendi cum
+        repellat Impedit laboriosam possimus aliquid numquam iure placeat Nam
+        laboriosam odio nulla voluptas quisquam? Facilis nostrum eos nobis
+        debitis fugit. Reiciendis unde magni cumque quis iure Saepe in quasi
+        rerum impedit voluptatibus
+      </p>
+      <p>
+        Elit nobis consequatur aliquid amet veritatis Aperiam consectetur nobis
+        est libero ut Optio laborum non error officiis incidunt Maiores labore
+        id eligendi rem totam vel dolorum vero Cumque voluptas odio doloremque
+        debitis exercitationem veniam, nesciunt Ex nulla corporis vero modi ab?
+        Exercitationem autem expedita in.
+      </p>
+      <figure class="body-image">
+        <img src="./img/electus-parrot.jpg" alt="Parrot" />
+        <figcaption>Fig.1 - Parrot, Puglia, Italy.</figcaption>
+      </figure>
+      <p>
+        Lorem praesentium minus porro provident nisi facere Rerum voluptas
+        aliquid earum molestias molestiae. Blanditiis vero sint incidunt
+        provident sequi vel. Iste deleniti ab illum unde in! Officiis dolore ea
+        deleniti temporibus sunt officiis In magnam illum explicabo perferendis
+        labore Dolores eum labore magnam asperiores deserunt at neque nobis?
+        Architecto aspernatur porro reiciendis perspiciatis adipisci Commodi
+        tenetur reiciendis necessitatibus molestias laborum iste ex Harum
+        ratione
+      </p>
+      <p class="quote">
+        Adipisicing molestiae temporibus illum libero quia. Iste quaerat eum
+        provident qui mollitia perspiciatis. Eaque repellat culpa enim soluta
+        placeat iste? Ipsam explicabo corporis delectus asperiores facere
+        Debitis incidunt quo amet commodi itaque? Possimus quis eum.
+      </p>
+
+      <div class="comments-count">
+        <i class="far fa-comment"></i>Comments <span>(15)</span>
+      </div>
+    </article>
+
+    <section class="comment-section">
+      <h2 class="offscreen">Comments</h2>
+      <article class="comments">
+        <div class="comment comment-row">
+          <div class="author">
+            <img class="profile" src="./img/profile.jpg" alt="" />
+            <div class="author-name">Susanne Smith</div>
+            <div class="date"><i class="far fa-calendar-alt"></i>Aug 31.</div>
+          </div>
+          <div class="comment-text">
+            <h1 class="title">Comment Title</h1>
+            <p>
+              Amet consequuntur eveniet suscipit explicabo totam accusantium sit
+              Labore sapiente labore dolores mollitia alias! Corporis iure cum
+              corporis id consequuntur Molestiae omnis consectetur aliquam
+              dignissimos labore Quas autem sapiente nostrum
+            </p>
+          </div>
+        </div>
+
+        <div class="comment">
+          <div class="author">
+            <img class="profile" src="./img/profile.jpg" alt="" />
+            <div class="author-name">Susanne Smith</div>
+            <div class="date"><i class="far fa-calendar-alt"></i>Aug 31.</div>
+          </div>
+          <div class="comment-text">
+            <h1 class="title">Comment Title</h1>
+            <p>
+              Amet consequuntur eveniet suscipit explicabo totam accusantium sit
+              Labore sapiente labore dolores mollitia alias! Corporis iure cum
+              corporis id consequuntur Molestiae omnis consectetur aliquam
+              dignissimos labore Quas autem sapiente nostrum
+            </p>
+          </div>
+        </div>
+
+        <form action="postform.php" method="post" class="comment-add">
+          <div class="form-container">
+            <h1 class="title">Leave Comment</h1>
+            <input type="text" name="title" placeholder="Comment title" />
+            <input type="text" name="name" placeholder="Name" />
+            <textarea
+              rows="7"
+              cols="50"
+              placeholder="Hello, Lorem Ipsum&#10;uscipit explicabo totam accusantium sit Labore sapiente labore dolores mollitia alias! Corporis iure cum corporis id consequunt"
+            ></textarea>
+            <input type="submit" />
+          </div>
+        </form>
+      </article>
+    </section>
+  </body>
+</html>

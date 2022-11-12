@@ -1,0 +1,63 @@
+terminálban beírva:
+
+A munkád során (munka kezdéskor is érdemes) a
+
+\*\*git status
+
+paranccsal megnézni, hogy épp milyen állapotba van a git repo-d.
+
+Ha megnézed a git status parancs output-ját és azt látod hogy:
+
+nothing to commit, working tree clean
+
+Akkor ez azt jelenti hogy a helyi gépeden nincs módosult file amit verziókezelned kellene (remote-on persze ettől még lehet, erre való a git pull parancs…)
+
+Ha a repon belül változás történt a fájlokban vagy új fájl keletkezett, akkor azt a git külön jelzi:
+
+A módosult file-okat a
+
+Changes not staged for commit:
+
+Rész után, az új fájlokat az
+
+Untracked files:
+
+Részben láthatod. Ha szeretnél egy commitot (verziót) készíteni a jelenlegi állapotról akkor a következő lépésed a stage-elés (add). Minden file-t ami új vagy módosult a git add parancs-al tudsz hozzáadni(stage-elni) az új commitodhoz. Ha csak egy darab file-t szeretnél hozzáadni a commithoz akkor pl:
+
+git add my-first-page/style.css
+
+Tehát az add szó után az adott file relatív elérési útját kell megadnod. Ha midnen file-t hozzá szeretnél adni a repo-hoz (minden módosult és új file-t fel szeretnél tölteni ebben a repo-ban) akkor az alábbi parancsot használd:
+
+\*\*git add .
+
+Ez után a git status parancs már zöld színnel fogja jelezni az új, és a módosult file-okat, mert ezek már elő vannak készítve ahhoz hogy bekerüljenek a commit-ba (stage-eltük őket)
+
+A git status outputjában a
+
+Changes to be committed:
+
+Rész után felsorolt fájloknál tudod ellenőrizni a stage-elt fájlokat. Ez után a következő lépés a commit elkészítése, és a commit message megírása lesz:
+
+\*\*git commit -m "navigáció hozzáadása, style.css elkészítése"
+
+Ha ehhez hasonló output-ot látsz, akkor létrejött a commit.
+
+[master fa56b3d] navigáció hozzáadása, style.css elkészítése
+2 files changed, 12 insertions(+), 1 deletion(-)
+create mode 100644 my-first-page/style.css
+
+A commit elkészítése után a git status újra clean állapotot jelez, de az üzenetben azt is írni fogja, hogy van egy commit ami nincs feltöltve a repoba:
+
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+(use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+A commit feltöltése a "git szerver”-re az alábbi paranccsal lehetséges:
+
+\*\*git push
+
+Ez után a git status megint a clean állapotot fogja jelenteni, és hogy nincs mit commit-olni:
+
+nothing to commit, working tree clean
