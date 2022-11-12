@@ -33,6 +33,8 @@
 // //
 // // szekvencia: a program sorról sorra fut le.
 // //
+// string concatenation
+// document.querySelector('.dice').setAttribute('src', 'dice-'+dice+'.png');
 // // elágazás: feltétel használatával gy adott kódrész csak akkor fut le, ha a feltétel igaz.
 // // az elágazásban használható dolgok:
 // // == egyenlő de nem vizsgálja a típust
@@ -48,30 +50,25 @@
 
 // -----------ITT KEZDŐDIK A KÓD--------------------------------------
 
-// változó deklarálás
+// változó deklarálás (típust nem kell adni, dinamicly declared a javascript)
 let scores, roundScore, activePlayer;
 
 function newGame() {
-  // a játékosok pontszámai, mindkét játákos null ponttal indul
+  // 1.a játékosok pontszámai, mindkét játákos null ponttal indul
   // értékadás : value assignment
   scores = [0, 0];
 
-  // forduló alatt megszerzett pontok
+  // 2.forduló alatt megszerzett pontok
   roundScore = 0;
 
-  // az első játékos kezd
+  // 3.az első játékos kezd, ez a változó fogja mutatni, hogy melyik játékos következik
   activePlayer = 0;
 
-  // dom manipuláció (dom: document object model = HTML kód)
+  // dom manipuláció (dom: document object model = HTML kód) - ezzel tudjuk átírni a html értékét
 
   // kiválsztjuk a score-0 id-vel rendelkező html elemet
   // és a tartalmát beállítjuk 0-ra
   document.querySelector("#score-0").textContent = 0;
-
-  // camelCase: mindenÚjSzótNagyBetűvelÍrunk // JavaScript
-  // PascalCase: AzElsőBetűIsNagybetű // JavaScript
-  // snake_case: minden_szó_között_alsóvonás_van // Python
-  // kebab-case: a-szavak-között-kötőjel-van  // CSS
 
   document.querySelector("#score-1").textContent = 0;
   document.querySelector("#current-0").textContent = 0;
@@ -94,7 +91,7 @@ function newGame() {
 
 newGame();
 
-// a kokca dobás, gombra kattintás
+// a kokca dobás, gombra kattintás,  erre egy esemény figyelőt ráteszünk, amire egy function-t indítunk
 document.querySelector(".btn-roll").addEventListener("click", function () {
   // 1. generálunk egy véletlen számot, 1-6 között
   const dice = Math.floor(Math.random() * 6) + 1;
@@ -103,11 +100,6 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
   document.querySelector(".dice").style.display = "block";
   // template string
   document.querySelector(".dice").setAttribute("src", `dice-${dice}.png`);
-
-  // szekvencia: a program az utasításokat sorról sorra hatja végre
-
-  // string concatenation
-  // document.querySelector('.dice').setAttribute('src', 'dice-'+dice+'.png');
 
   // ha nem 1 a dobott érték akkor felírjuk a pontszámot, és ugyanaz a játékos dobhat újra
   // elágazás:
@@ -120,8 +112,6 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
     nextPlayer();
   }
 });
-
-// DRY = do not repeat yourself
 
 function nextPlayer() {
   roundScore = 0;
@@ -147,7 +137,7 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
     scores[activePlayer];
 
   // 3. nézzük meg hogy van e nyertes
-  if (scores[activePlayer] >= 20) {
+  if (scores[activePlayer] >= 100) {
     document
       .querySelector(`.player-${activePlayer}-panel`)
       .classList.add("winner");
@@ -166,76 +156,3 @@ document.querySelector(".btn-hold").addEventListener("click", function () {
 });
 
 document.querySelector(".btn-new").addEventListener("click", newGame);
-
-// // ----------------EZ VOLT AZ ÉN KÓDOM-----------------------------------------
-
-// // változó deklarálás. típust nem kell adni, dinamicly declared a javascript:
-// let scores, rounScore, activePlayer;
-
-// // változóknak értéket adunk
-// // 1.játékosok pontjai, mindkettőé nulláról indul:
-// scores = [0, 0];
-
-// // 2.az adott fordulóban a játékos által megszerzett pontok részére egy változó. Elég egy:
-// roundScore = 0;
-
-// // 3.az első játékos kezd, gyakorlatilag ez fogja mutatni, hogy melyik játékos következik:
-// activePlayer = 0;
-
-// // dom manipuláció (dom: document object model = HTML kód): ezzel tudjuk átírni a html értékét
-// // a score-0 ID-vel rendelkező elemet kiválasztjuk és a tartalmát nullára állítjuk:
-// document.querySelector("#score-0").textContent = 0;
-// // másik megoldás lenne: document.getelement()
-// document.querySelector("#score-1").textContent = 0;
-// document.querySelector("#current-0").textContent = 0;
-// document.querySelector("#current-1").textContent = 0;
-
-// document.querySelector(".dice").style.display = "none";
-
-// // kocka dobás, tehát a gombra kattintással. erre egy esemény figyelőt ráteszünk, amire egy function-t indítunk
-
-// document.querySelector(".btn-roll").addEventListener("click", function () {
-//   // 1. generálunk egy véletlen számot, 1-6 között
-//   const dice = Math.floor(Math.random() * 6) + 1;
-
-//   // 2. jelenítsük meg az eredményt a UI-on:
-//   document.querySelector(".dice").style.display = "block";
-//   // template string
-//   document.querySelector(".dice").setAttribute("src", `dice-${dice}.png`);
-
-//   // szekvencia: a program az utasításokat sorról sorra hatja végre
-
-//   // string concatenation
-//   // document.querySelector('.dice').setAttribute('src', 'dice-'+dice+'.png');
-
-//   // ha nem 1 a dobott érték akkor felírjuk a pontszámot, és ugyanaz a játékos dobhat újra
-//   // elágazás:
-//   if (dice !== 1) {
-//     roundScore = roundScore + dice;
-//     // a UI-on megjelenítjük az eredményt:
-//     document.querySelector("#current-" + activePlayer).textContent = roundScore;
-//   } else {
-//     // ha a dobott érték 1, akkor a pontok elvesznek és a következő játékos jön
-//     roundScore = 0;
-//     if (activePlayer === 0) {
-//       activePlayer = 1;
-//     } else {
-//       activePlayer = 0;
-//     }
-//     // UI-on frissítsük az értékeket:
-//     document.querySelector("#current-0").textContent = 0;
-//     document.querySelector("#current-1").textContent = 0;
-//     document.querySelector(".player-1-panel").classList.toggle("active");
-//     document.querySelector(".player-2-panel").classList.toggle("active");
-//   }
-// });
-
-// document.querySelector(".btn-hold").addEventListener("click", function () {
-//   // 1. a játékos megszerzi a kör alatt szerzett pontjait
-//   scores[activePlayer] = scores[activePlayer] + roundScore;
-//   // scores[activePlayer] += roundScore;
-
-//   // 2. UI-t frissítsük
-//   document.querySelector("#score-" + activePlayer).textContent =
-//     scores[activePlayer];
-// });
