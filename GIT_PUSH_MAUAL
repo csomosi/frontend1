@@ -28,7 +28,7 @@ git add my-first-page/style.css
 
 Tehát az add szó után az adott file relatív elérési útját kell megadnod. Ha midnen file-t hozzá szeretnél adni a repo-hoz (minden módosult és új file-t fel szeretnél tölteni ebben a repo-ban) akkor az alábbi parancsot használd:
 
-\*\*git add .
+\*\* git add .
 
 Ez után a git status parancs már zöld színnel fogja jelezni az új, és a módosult file-okat, mert ezek már elő vannak készítve ahhoz hogy bekerüljenek a commit-ba (stage-eltük őket)
 
